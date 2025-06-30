@@ -12,7 +12,7 @@ examples = {
         'sql': '''
                SELECT *
                FROM orders
-               WHERE orderDate = '2004-01-01';
+               WHERE orderDate = '2003-01-06';
                '''
     },
     '02. Získání roku z data': {
@@ -26,7 +26,7 @@ examples = {
         'sql': '''
                SELECT orderDate, status
                FROM orders
-               WHERE YEAR(orderDate) = 2004;
+               WHERE YEAR(orderDate) = 2003;
                '''
     },
     '03. Měsíc a den': {
