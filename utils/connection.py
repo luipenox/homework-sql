@@ -1,10 +1,9 @@
-import mariadb
-import sys
+import mysql.connector
 
 
 def get_connection():
     try:
-        connection = mariadb.connect(
+        connection = mysql.connector.connect(
             user="guest",
             password="ctu-relational",
             host="relational.fel.cvut.cz",
@@ -14,5 +13,5 @@ def get_connection():
 
         return connection
 
-    except mariadb.Error as e:
+    except mysql.connector.Error as e:
         pass
