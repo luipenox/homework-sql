@@ -46,14 +46,14 @@ examples = {
     '04. Kontaktní údaje zaměstnanců': {
         'level': 'Začátečník',
         'title': '04. Kontaktní údaje zaměstnanců',
-            'instructions': 'Vypište jméno, příjmení, email a telefon všech zaměstnanců z tabulky `employees`.',
+            'instructions': 'Vypište jméno, příjmení a email všech zaměstnanců z tabulky `employees`.',
         'hint':
             """
             Vybereme pouze požadované sloupce z tabulky.
             Sloupce oddělujeme čárkami.
             """,
         'sql': '''
-               SELECT firstName, lastName, email, phone
+               SELECT firstName, lastName, email
                FROM employees;
                '''
     },
