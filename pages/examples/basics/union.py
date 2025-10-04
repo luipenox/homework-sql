@@ -42,7 +42,8 @@ examples = {
     '03. UNION s více sloupci': {
         'level': 'Mírně pokročilý',
         'title': '03. UNION s více sloupci',
-        'instructions': '''Vytvořte seznam kontaktů obsahující jména a telefonní čísla jak zákazníků, tak zaměstnanců.
+        'instructions': '''Vytvořte seznam kontaktů obsahující jména a kontakt jak zákazníků, tak zaměstnanců.
+        U zákazníků zobrazte telefonní číslo, u zaměstnanců email.
         Přidejte sloupec označující, zda jde o zákazníka nebo zaměstnance.''',
         'hint': '''
         - Můžete použít více sloupců, ale musí odpovídat v obou dotazech.
@@ -51,17 +52,17 @@ examples = {
         ''',
         'sql': '''
                SELECT
-                   customerName AS jmeno,
-                   phone AS telefon,
-                   'Zákazník' AS typ
-               FROM customers
-               UNION
-               SELECT
-                   CONCAT(firstName, ' ', lastName),
-                   phone,
-                   'Zaměstnanec'
-               FROM employees
-               ORDER BY jmeno;
+                    customerName AS jmeno,
+                    phone AS kontakt,
+                    'Zákazník' AS typ
+                FROM customers
+                UNION
+                SELECT
+                    CONCAT(firstName, ' ', lastName),
+                    email,
+                    'Zaměstnanec'
+                FROM employees
+                ORDER BY jmeno;
                '''
     }
 }
